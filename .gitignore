@@ -1,0 +1,44 @@
+# Ignore bundler config.
+.bundle
+
+# Ignore all logfiles and tempfiles.
+log/*
+tmp/*
+!log/.keep
+!tmp/.keep
+
+# Ignore uploaded files in development.
+storage/*
+!storage/.keep
+
+# Ignore secret key bases, credentials, and other secrets.
+config/master.key
+config/credentials.yml.enc
+
+# Ignore the database.
+db/*.sqlite3
+db/*.sqlite3-journal
+db/*.sqlite3-*
+
+# Ignore all yarn files
+/yarn-error.log
+/yarn-debug.log*
+.yarn-integrity
+
+# Ignore node modules
+node_modules
+
+# Ignore macOS system files
+.DS_Store
+
+# Ignore byebug command history file.
+.byebug_history
+
+# Ignore IDE config files
+.idea/
+
+# Ignore other untracked files
+/.bundle/
+/vendor/bundle
+.rspec
+.ruby-version
