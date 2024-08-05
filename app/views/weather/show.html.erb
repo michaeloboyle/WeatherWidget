@@ -1,0 +1,8 @@
+<!-- app/views/weather/show.html.erb -->
+<h1>Weather Information</h1>
+<p>Temperature: <%= @forecast[:temperature] %>°F</p>
+<p>High: <%= @forecast[:high] %>°F</p>
+<p>Low: <%= @forecast[:low] %>°F</p>
+<% if @from_cache %>
+  <p>(from cache)</p>
+<% end %>

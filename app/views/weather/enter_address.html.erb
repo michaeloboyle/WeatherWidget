@@ -1,0 +1,10 @@
+<h1>Enter an Address</h1>
+<%= form_with url: weather_path, method: :get, local: true do %>
+  <div>
+    <%= label_tag :address, "Address:" %>
+    <%= text_field_tag :address %>
+  </div>
+  <div>
+    <%= submit_tag "Get Weather" %>
+  </div>
+<% end %>
