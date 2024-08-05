@@ -1,5 +1,14 @@
 <!-- app/views/weather/show.html.erb -->
+
 <h1>Weather Information</h1>
+
+<p>Address: <%= @address %></p>
+<% if @postal_code.present? %>
+  <p>Zip Code: <%= @postal_code %></p>
+<% else %>
+  <p>Coordinates: <%= @latitude %>, <%= @longitude %></p>
+<% end %>
+
 <p>Temperature: <%= @forecast[:temperature] %>°F</p>
 <p>High: <%= @forecast[:high] %>°F</p>
 <p>Low: <%= @forecast[:low] %>°F</p>

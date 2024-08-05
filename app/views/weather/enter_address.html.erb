@@ -1,10 +1,16 @@
 <h1>Enter an Address</h1>
-<%= form_with url: weather_path, method: :get, local: true do %>
-  <div>
-    <%= label_tag :address, "Address:" %>
-    <%= text_field_tag :address %>
-  </div>
-  <div>
-    <%= submit_tag "Get Weather" %>
-  </div>
+<% if params[:address].present? %>
+  <p><strong>Address:</strong> <%= params[:address] %></p>
 <% end %>
+<% if @zip_code.present? %>
+  <p><strong>Zip Code:</strong> <%= @zip_code %></p>
+<% end %>
+<form action="/weather" accept-charset="UTF-8" method="get">
+  <div>
+    <label for="address">Address:</label>
+    <input type="text" id="address" name="address" value="<%= params[:address] %>">
+  </div>
+  <div>
+    <input type="submit" name="commit" value="Get Weather" data-disable-with="Get Weather">
+  </div>
+</form>
