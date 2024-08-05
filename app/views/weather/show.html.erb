@@ -1,17 +1,22 @@
 <!-- app/views/weather/show.html.erb -->
+<h1>Weather for Address</h1>
 
-<h1>Weather Information</h1>
+<p><strong>Address:</strong> <%= @address %></p>
+<p><strong>Zip Code:</strong> <%= @postal_code %></p>
 
-<p>Address: <%= @address %></p>
-<% if @postal_code.present? %>
-  <p>Zip Code: <%= @postal_code %></p>
+<% if @forecast %>
+  <p><strong>Temperature:</strong> <%= @forecast[:temperature] %>°F</p>
+  <p><strong>High:</strong> <%= @forecast[:high] %>°F</p>
+  <p><strong>Low:</strong> <%= @forecast[:low] %>°F</p>
+  <% if @from_cache %>
+    <p>(from cache)</p>
+  <% end %>
 <% else %>
-  <p>Coordinates: <%= @latitude %>, <%= @longitude %></p>
+  <p>Could not retrieve weather data. Please try again later.</p>
 <% end %>
 
-<p>Temperature: <%= @forecast[:temperature] %>°F</p>
-<p>High: <%= @forecast[:high] %>°F</p>
-<p>Low: <%= @forecast[:low] %>°F</p>
-<% if @from_cache %>
-  <p>(from cache)</p>
+<% if flash[:alert] %>
+  <p><strong>Error:</strong> <%= flash[:alert] %></p>
 <% end %>
+
+<p><%= link_to 'Try another address', weather_path %></p>

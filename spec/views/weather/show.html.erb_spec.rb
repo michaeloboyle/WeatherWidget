@@ -10,7 +10,7 @@ RSpec.describe "weather/show.html.erb", type: :view do
   it "displays the weather information" do
     render template: 'weather/show'
 
-    expect(rendered).to have_content("Weather Information")
+    expect(rendered).to have_content("Weather for Address")
     expect(rendered).to have_content("Temperature: 72°F")
     expect(rendered).to have_content("High: 75°F")
     expect(rendered).to have_content("Low: 68°F")
