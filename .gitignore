@@ -42,3 +42,4 @@ node_modules
 /vendor/bundle
 .rspec
 .ruby-version
+.env
